@@ -1,9 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-int findpos(vector<int> &count,int val){
-    count[val]--;
-    return count[val];
-}
+
 int main(){
     int n;
     cin >> n;
@@ -22,8 +19,7 @@ int main(){
     }
     vector<int> ans(n);
     for(int i = n-1; i >= 0; i--){
-        int p = findpos(count, arr[i]);
-        ans[p] = arr[i];
+        ans[--count[arr[i]]]=arr[i];
     }
     for(int i: ans){
         cout << i << " ";
